@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* @font-face {
+  font-family: electronicFont;
+  src: url(../font/DS-DIGIT.TTF);
+} */
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(../images/backgroud5.jpg) no-repeat top center;
+  line-height: 1.15;
+  /* 下面代码让背景图铺满 */
+  background-size: 100% 100vh;
+  background-attachment: fixed;
+}
+
+header {
+  position: relative;
+  height: 1.25rem;
+  background: url(../images/head_bg.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+header h1 {
+  font-size: 0.475rem;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  line-height: 1rem;
+}
+
+header .show-time {
+  position: absolute;
+  top: 0;
+  right: 0.375rem;
+  line-height: 0.9375rem;
+  color: rgb(0, 0, 0);
+  font-size: 0.25rem;
+}
+
+.mainbox {
+  position: relative;
+  display: flex;
+  min-width: 1024px;
+  max-height: 1920px;
+  margin: 0 auto;
+  padding-top: 0.1rem;
+
+}
+
+.mainbox .column {
+  flex: 3;
+}
+
+.mainbox .column:nth-child(2) {
+  flex: 5;
+  margin: 0 0.125rem 0.1875rem;
+  overflow: hidden;
+}
+
+.mainbox .panel {
+  position: relative;
+  height: 3.875rem;
+  /* padding: 0 0.095rem 0.2rem; */
+  margin-bottom: 0.1875rem;
+  border: 1px solid rgba(25, 186, 139, 0.17);
+  background: url(../images/line.png) rgba(148, 160, 197, 0.266);
+}
+
+.mainbox .panel::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid #02a6b5;
+  border-top: 2px solid #02a6b5;
+  content: "";
+}
+
+.mainbox .panel::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #02a6b5;
+  border-top: 2px solid #02a6b5;
+  content: "";
+}
+
+.mainbox .panel .panel-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.mainbox .panel .panel-footer::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid #02a6b5;
+  border-bottom: 2px solid #02a6b5;
+  content: "";
+}
+
+.mainbox .panel .panel-footer::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #02a6b5;
+  border-bottom: 2px solid #02a6b5;
+  content: "";
+}
+
+.mainbox .panel h2 {
+  height: 0.6rem;
+  color: #000000;
+  line-height: 0.8rem;
+  text-align: center;
+  font-size: 0.26rem;
+  font-weight: 800;
+}
+
+.mainbox .panel h2 a {
+  color: #a7a7a7;
+  text-decoration: none;
+  margin: 0 0.125rem;
+}
+
+.mainbox .panel h2 .a-active {
+  color: #fff;
+}
+
+.mainbox .panel .chart {
+  height: 3rem;
+}
+
+.no {
+  background-color: rgba(134, 149, 193, 0.285);
+  padding: 0.1875rem;
+}
+
+.no .no-hd {
+  position: relative;
+  border: 1px solid rgba(88, 95, 116, 0.17);
+}
+
+.no .no-hd::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.375rem;
+  height: 0.125rem;
+  border-top: 2px solid #02a6b5;
+  border-left: 2px solid #02a6b5;
+  content: "";
+}
+
+.no .no-hd::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0.375rem;
+  height: 0.125rem;
+  border-bottom: 2px solid #02a6b5;
+  border-right: 2px solid #02a6b5;
+  content: "";
+}
+
+.no .no-hd ul {
+  display: flex;
+}
+
+.no .no-hd ul li {
+  position: relative;
+  flex: 1;
+  line-height: 1rem;
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: #404040;
+  text-align: center;
+  /* font-family: electronicFont; */
+}
+
+.no .no-hd ul li:first-child::after {
+  content: "";
+  position: absolute;
+  top: 25%;
+  right: 0;
+  height: 50%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.no .no-bd ul {
+  display: flex;
+}
+
+.no .no-bd ul li {
+  flex: 1;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.225rem;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  padding-top: 0.125rem;
+}
+
+@keyframes rotate1 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate2 {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+/* 约束屏幕尺寸 */
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 42px !important;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 80px !important;
+  }
+}
+
+/* 添加按钮样式 */
+#rightButton {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: rgba(111, 108, 108, 0.544);
+  /* 浅灰色背景并添加透明度 */
+  color: rgba(211, 211, 211);
+  border: none;
+  width: 40px;
+  /* 设置宽度和高度相同 */
+  height: 40px;
+  border-radius: 50%;
+  /* 设置圆角为 50% 实现圆形 */
+  cursor: pointer;
+  font-size: 24px;
+  /* 设置字体大小 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  /* 添加 z-index 属性，使其显示在上方 */
+}
+
+/* 鼠标悬浮时的样式 */
+#rightButton:hover {
+  color: white;
+  background-color: rgba(69, 66, 66, 0.872);
+  /* 修改悬浮时的背景颜色 */
+}
+
+/* 添加按钮样式 */
+#leftButton {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  background-color: rgba(111, 108, 108, 0.544);
+  /* 浅灰色背景并添加透明度 */
+  color: rgba(211, 211, 211);
+  border: none;
+  width: 40px;
+  /* 设置宽度和高度相同 */
+  height: 40px;
+  border-radius: 50%;
+  /* 设置圆角为 50% 实现圆形 */
+  cursor: pointer;
+  font-size: 24px;
+  /* 设置字体大小 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  /* 添加 z-index 属性，使其显示在上方 */
+}
+
+/* 鼠标悬浮时的样式 */
+#leftButton:hover {
+  color: white;
+  background-color: rgba(69, 66, 66, 0.872);
+  /* 修改悬浮时的背景颜色 */
+}

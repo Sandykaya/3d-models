@@ -1,0 +1,35 @@
+/* 新增的按钮样式 */
+#backButton {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  /* 添加z - index属性，确保按钮在最上层 */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  /* 设置背景图片，将图片路径替换为你实际的图片路径 */
+  background-image: url("./images/backgroud5.png");
+  /* 设置背景图片不重复 */
+  background-repeat: no - repeat;
+  /* 设置背景图片大小为覆盖整个body */
+  background-size: cover;
+}
+
+/* 让ECharts容器占满body并提高z-index */
+#main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,608 @@
+@charset "utf-8";
+
+/* CSS Document */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: "微软雅黑";
+}
+
+body {
+  background: #000d4a url(../images/bg.jpg) center center;
+  background-size: cover;
+  color: #000;
+  font-size: 0.1rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: electronicFont;
+  src: url(../font/DS-DIGIT.TTF);
+}
+
+i {
+  margin: 0px;
+  padding: 0px;
+  text-indent: 0px;
+}
+
+img {
+  border: none;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(87, 158, 146, 0.499);
+}
+
+a.active,
+a:focus {
+  outline: none !important;
+  text-decoration: none;
+}
+
+ol,
+ul,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+a:hover {
+  /* color: #06c;
+    text-decoration: none !important */
+  cursor: default;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.clearfix:after,
+.clearfix:before {
+  display: table;
+  content: " ";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.pulll_left {
+  float: left;
+}
+
+.pulll_right {
+  float: right;
+}
+
+/*谷哥滚动条样式*/
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  position: absolute;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5bc0de;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ddd;
+}
+
+/***/
+
+.loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+  z-index: 100000000;
+  width: 100%;
+  height: 100%;
+  background: #1a1a1c;
+  text-align: center;
+}
+
+.loadbox {
+  position: absolute;
+  width: 160px;
+  height: 150px;
+  color: rgb(87, 158, 146);
+  left: 50%;
+  top: 50%;
+  margin-top: -100px;
+  margin-left: -75px;
+}
+
+.loadbox img {
+  margin: 10px auto;
+  display: block;
+  width: 40px;
+}
+
+.head {
+  height: 1.05rem;
+  margin: 0 auto;
+}
+
+/* .headbox {
+  background-color:rgba(87, 158, 146, 0.5); */
+/* margin: .2rem 0; */
+/* height: calc(100% - 1.05rem) */
+/* } */
+
+.head h1 {
+  color: #000;
+  text-align: center;
+  font-size: 0.55rem;
+  line-height: 0.8rem;
+  letter-spacing: -1px;
+}
+
+.head h1 a {
+  color: #404040;
+}
+
+.head h1 img {
+  width: 1.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.time {
+  position: absolute;
+  right: 0.15rem;
+  top: 0;
+  line-height: 0.75rem;
+  color: #000;
+  font-size: 0.3rem;
+  padding-right: 0.1rem;
+  font-family: electronicFont;
+}
+
+.mainbox {
+  padding: 0 0.2rem 0rem 0.2rem;
+  height: calc(100% - 1.05rem);
+}
+
+.mainbox > ul {
+  margin-left: -0.1rem;
+  margin-right: -0.1rem;
+  height: 100%;
+}
+
+.mainbox > ul > li {
+  float: left;
+  padding: 0 0.1rem;
+  height: 100%;
+  width: 30%;
+}
+
+.mainbox > ul > li:nth-child(2) {
+  width: 40%;
+}
+
+/* .mainbox .panel {
+  position: relative;
+  height: 3.875rem; */
+/* padding: 0 0.095rem 0.2rem; */
+/* margin-bottom: 0.1875rem;
+  border: 1px solid rgba(25, 186, 139, 0.17);
+  background: url(../images/line.png) rgba(148, 160, 197, 0.266);
+} */
+
+.mainbox .panel::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid #02a6b5;
+  border-top: 2px solid #02a6b5;
+  content: "";
+}
+
+.mainbox .panel::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #02a6b5;
+  border-top: 2px solid #02a6b5;
+  content: "";
+}
+
+/* .mainbox .panel .panel-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+} */
+
+.mainbox .panel .panel-footer::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid #02a6b5;
+  border-bottom: 2px solid #02a6b5;
+  content: "";
+}
+
+.mainbox .panel .panel-footer::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #02a6b5;
+  border-bottom: 2px solid #02a6b5;
+  content: "";
+}
+
+.boxall {
+  padding: 0 0.2rem 0.2rem 0.2rem;
+  background: rgba(87, 158, 146, 0.5);
+  position: relative;
+  margin-bottom: 0.15rem;
+  z-index: 10;
+}
+
+.alltitle {
+  font-size: 0.25rem;
+  color: #000;
+  line-height: 0.5rem;
+  position: relative;
+  padding-left: 0.15rem;
+}
+
+.alltitle:before {
+  position: absolute;
+  height: 0.2rem;
+  width: 4px;
+  background: #49bcf7;
+  border-radius: 5px;
+  content: "";
+  left: 0;
+  top: 50%;
+  margin-top: -0.1rem;
+}
+
+.boxnav {
+  height: calc(100% - 0.5rem);
+  width: 100%;
+}
+
+.row > li {
+  float: left;
+  height: 100%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33333%;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.tit01 {
+  text-align: center;
+  color: #000;
+  font-size: 0.16rem;
+  padding: 0.3rem 0 0.02rem 0;
+}
+
+.piebox {
+  height: calc(100% - 0.5rem);
+  position: relative;
+}
+
+.piebox:before {
+  width: 0.6rem;
+  height: 0.6rem;
+  content: "";
+  border: 1px solid #49bcf7;
+  border-radius: 1rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -0.31rem;
+  margin-top: -0.31rem;
+  opacity: 0.7;
+}
+
+.sqzs {
+  margin-right: 0.2rem;
+}
+
+.sqzs p {
+  padding: 0.2rem 0 0.1rem 0;
+  font-size: 0.22rem;
+}
+
+.sqzs h1 {
+  height: calc(100% - 0.65rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  color: #fef000;
+  font-weight: normal;
+  letter-spacing: 2px;
+  font-size: 0.5rem;
+  justify-content: center;
+  padding-bottom: 0.05rem;
+}
+
+.sqzs h1 span {
+  font-size: 0.8rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+/* 滚动表格 */
+table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  position: relative;
+}
+
+table th {
+  font-size: 0.18rem;
+  background: rgba(0, 0, 0, 0.1);
+  height: 10px;
+}
+
+table td {
+  font-size: 0.18rem;
+  color: #000;
+}
+
+table th,
+table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.01rem 0;
+}
+
+.boxnav {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.table-wrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.table-wrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+}
+
+/* 固定表头 */
+thead th {
+  background-color: #86aea7;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+/* 固定第一列 */
+tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  box-shadow: 2px 0 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  text-align: center;
+  box-sizing: border-box;
+}
+
+table tbody th {
+  height: 10px;
+}
+
+/* 确保表头第一格在最上层 */
+thead th:first-child {
+  z-index: 30;
+}
+
+/* 克隆行的样式 */
+.clone-row {
+  display: none;
+}
+
+.panel-footer {
+  height: 10px;
+  /* background: #f5f5f5; */
+  border-radius: 0 0 4px 4px;
+}
+
+.boxnav {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+  /* 两个表格之间的间距 */
+}
+
+/* .boxnav .tw {
+  height: 10.5rem;
+} */
+
+.table-wrapper {
+  width: 100%;
+  /* height: 50rem; */
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+}
+
+/* 固定表头 */
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* 固定第一列 */
+tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  box-shadow: 2px 0 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* 确保表头第一格在最上层 */
+thead th:first-child {
+  z-index: 30;
+}
+
+/* 克隆行的样式 */
+.clone-row {
+  display: none;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.scrolling-content {
+  animation: scroll 40s linear infinite;
+}
+
+.scrolling-content:hover {
+  animation-play-state: paused;
+}
+
+/* Ensure smooth rendering */
+.table-wrapper {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+#backButton {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* 添加按钮样式 */
+#leftButton {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  background-color: rgba(111, 108, 108, 0.544);
+  /* 浅灰色背景并添加透明度 */
+  color: rgba(211, 211, 211);
+  border: none;
+  width: 40px;
+  /* 设置宽度和高度相同 */
+  height: 40px;
+  border-radius: 50%;
+  /* 设置圆角为 50% 实现圆形 */
+  cursor: pointer;
+  font-size: 24px;
+  /* 设置字体大小 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  /* 增大 z-index 值 */
+}
+
+/* 鼠标悬浮时的样式 */
+#leftButton:hover {
+  color: white;
+  background-color: rgba(69, 66, 66, 0.872);
+  /* 修改悬浮时的背景颜色 */
+}
+
+/* 添加按钮样式 */
+#rightButton {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: rgba(111, 108, 108, 0.544);
+  /* 浅灰色背景并添加透明度 */
+  color: rgba(211, 211, 211);
+  border: none;
+  width: 40px;
+  /* 设置宽度和高度相同 */
+  height: 40px;
+  border-radius: 50%;
+  /* 设置圆角为 50% 实现圆形 */
+  cursor: pointer;
+  font-size: 24px;
+  /* 设置字体大小 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  /* 增大 z-index 值 */
+}
+
+/* 鼠标悬浮时的样式 */
+#rightButton:hover {
+  color: white;
+  background-color: rgba(69, 66, 66, 0.872);
+  /* 修改悬浮时的背景颜色 */
+}

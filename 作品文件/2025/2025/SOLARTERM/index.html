@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>自然气候与时间规律</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts-wordcloud@2.0.0/dist/echarts-wordcloud.min.js"></script>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+  <!-- 页面主体 -->
+  <section class="mainbox">
+    <!-- 左侧盒子 -->
+    <div class="column">
+      <div class="panel bar">
+        <h2>不同朝代平均降水量对比</h2>
+        <!-- 图表放置盒子 -->
+        <div class="chart"></div>
+        <!-- 伪元素绘制盒子下边角 -->
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel line">
+        <button id="leftButton">&lt;</button>
+        <h2>不同朝代和时期的气温与现在相比的变化</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel pie">
+        <h2>不同朝代和时期日照时长饼状图</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+    <!-- 中间盒子 -->
+    <div class="column">
+      <!-- 头部 no 模块 -->
+      <div class="no">
+        <div class="no-hd">
+          <ul>
+            <li>自然气候与时间规律</li>
+            <!-- <li>156万辆</li> -->
+          </ul>
+        </div>
+        <div class="no-bd">
+          <ul>
+            <!-- <li>2020新能源汽车销量最多省份</li>
+              <li>新能源汽车销售数量</li> -->
+          </ul>
+        </div>
+      </div>
+      <div id="chart" style="width: 800px; height: 600px; left: -83px; top: 10px; "></div>
+    </div>
+    <!-- 右侧盒子 -->
+    <div class="column">
+      <div class="panel radar">
+        <h2>不同朝代自然灾害次数雷达图</h2>
+        <div class="chart" style="height: 3.2rem;"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <!-- 添加右按钮 -->
+      <button id="rightButton">></button>
+      <div class="panel wordcloud">
+        <h2>节气相关词云图</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel barline">
+        <h2>古代不同天气灾害对农作物产量的影响</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/flexible.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
