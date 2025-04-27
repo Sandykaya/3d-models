@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    /* 隐藏水平滚动条 */
+}
+
+.timeline-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 0;
+    position: relative;
+    min-height: 100vh;
+    /* 设置最小高度为屏幕高度 */
+    /* 设置背景图片 */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* 固定背景图片，防止滚动时背景移动 */
+}
+
+/* 添加遮罩层 */
+.timeline-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(55, 55, 55, 0.9);
+    /* 遮罩层颜色和透明度 */
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-weight: normal;
+    margin: 50px 0;
+    margin-bottom: 85px;
+    font-size: 48px;
+    letter-spacing: 1px;
+    position: relative;
+    /* 确保标题在遮罩层之上 */
+    z-index: 1;
+}
+
+.timeline {
+    position: relative;
+    z-index: 1;
+    /* 确保时间轴在遮罩层之上 */
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    background-color: rgba(204, 204, 204, 0.2);
+    height: 100%;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    display: flex;
+    margin: 100px 0;
+    margin-bottom: 160px;
+    position: relative;
+    margin-left: 320px;
+    width: calc(100% - 280px);
+    opacity: 0.3;
+    filter: blur(5px);
+    transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+    margin-left: 0;
+    width: calc(100% - 340px);
+}
+
+.timeline-item:nth-child(even).timeline-img {
+    margin-right: 0;
+    margin-left: 91px;
+}
+
+.timeline-img {
+    width: 30%;
+    margin-right: 0;
+    position: relative;
+}
+
+/* 修改图片高度 */
+.timeline-img img {
+    width: 100%;
+    height: 250px;
+    /* 调整图片高度 */
+    object-fit: cover;
+    /* 保持图片比例并覆盖容器 */
+    display: block;
+}
+
+.img-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.img-info h2 {
+    font-weight: normal;
+    text-align: center;
+    font-size: 24px;
+}
+
+.img-info p {
+    margin: 0;
+}
+
+.timeline-category {
+    width: 60%;
+    position: relative;
+    display: flex;
+    align-items: end;
+    margin-left: 52px;
+}
+
+.left-category {
+    justify-content: flex-end;
+    margin-left: 0;
+    margin-right: 50px;
+}
+
+.category-text {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    border-left: 2px solid white;
+    padding-left: 10px;
+    margin-left: -4px;
+    z-index: 1;
+}
+
+.left-category-text {
+    border-left: none;
+    border-right: 2px solid white;
+    padding-right: 10px;
+    margin-right: -4px;
+}
+
+.description {
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    display: none;
+    width: 80%;
+    z-index: 2;
+    opacity: 0.9;
+    /* 添加不透明度 */
+    overflow: visible;
+    /* 让内容超出部分可见 */
+}
+
+.left-description {
+    left: 88px;
+}
+
+/* 调整描述框覆盖图片的样式 */
+.description::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    /* 根据需要调整距离 */
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.timeline-item.active .timeline-img:hover+.timeline-category .description {
+    display: block;
+}
+
+.timeline-item.active {
+    opacity: 1;
+    filter: blur(0);
+}
+
+#backButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
